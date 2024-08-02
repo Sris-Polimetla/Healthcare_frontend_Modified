@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Management Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>BE FIT HEALTH CARE</h1>
+        <div id="user-auth">
+            <button id="sign-in-btn">Sign In</button>
+            <button id="sign-up-btn">Sign Up</button>
+            <button id="sign-out-btn" style="display: none;">Sign Out</button>
+        </div>
+    </header>
+    <nav>
+        <a href="#" data-section="doctors">Doctors</a> |
+        <a href="#" data-section="consultations">Consultation History</a> |
+        <a href="#" data-section="medicine">Medicine Order and Delivery</a> |
+        <a href="#" data-section="lab">Home Collection of Lab Tests</a>
+    </nav>
+    <div class="container">
+        <section id="auth">
+            <div id="sign-in-form" class="auth-form">
+                <h2>Sign In</h2>
+                <form id="sign-in">
+                    <label for="sign-in-email">Email:</label>
+                    <input type="email" id="sign-in-email" name="email" required><br>
+                    <label for="sign-in-password">Password:</label>
+                    <input type="password" id="sign-in-password" name="password" required><br>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+            <div id="sign-up-form" class="auth-form">
+                <h2>Sign Up</h2>
+                <form id="sign-up">
+                    <label for="sign-up-name">Name:</label>
+                    <input type="text" id="sign-up-name" name="name" required><br>
+                    <label for="sign-up-email">Email:</label>
+                    <input type="email" id="sign-up-email" name="email" required><br>
+                    <label for="sign-up-password">Password:</label>
+                    <input type="password" id="sign-up-password" name="password" required><br>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+        <section id="doctors" class="content-section">
+            <h2>Nearby Doctors</h2>
+            <input type="text" id="doctor-search" placeholder="Search for a doctor...">
+            <div class="doctor-list"></div>
+        </section>
+        <section id="consultations" class="content-section">
+            <h2>Consultation History</h2>
+            <ul id="consultation-history-list"></ul>
+        </section>
+        <section id="medicine" class="content-section">
+            <h2>Medicine Order and Delivery</h2>
+            <div class="medicine-order">
+                <h3>Medicine Order Form</h3>
+                <form id="medicine-order-form">
+                    <label for="medicine-name">Medicine Name:</label>
+                    <input type="text" id="medicine-name" name="medicine-name" required><br>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required><br>
+                    <label for="delivery-address">Delivery Address:</label>
+                    <textarea id="delivery-address" name="delivery-address" rows="3" required></textarea><br>
+                    <button type="submit">Submit Order</button>
+                </form>
+            </div>
+            <div class="medicine-history">
+                <h3>Medicine Order History</h3>
+                <ul id="medicine-history-list"></ul>
+            </div>
+        </section>
+        <section id="lab" class="content-section">
+            <h2>Home Collection of Lab Tests</h2>
+            <div class="lab-test">
+                <h3>Lab Test Booking Form</h3>
+                <form id="lab-test-form">
+                    <label for="test-type">Test Type:</label>
+                    <select id="test-type" name="test-type" required>
+                        <option value="">Select Test Type</option>
+                        <option value="Blood Test">Blood Test</option>
+                        <option value="Urine Test">Urine Test</option>
+                        <!-- Add more test options as needed -->
+                    </select><br>
+                    <label for="preferred-date">Preferred Date:</label>
+                    <input type="date" id="preferred-date" name="preferred-date" required><br>
+                    <label for="preferred-time">Preferred Time:</label>
+                    <input type="time" id="preferred-time" name="preferred-time" required><br>
+                    <label for="contact-info">Contact Information:</label>
+                    <input type="text" id="contact-info" name="contact-info" required><br>
+                    <button type="submit">Submit Booking</button>
+                </form>
+            </div>
+            <div class="lab-history">
+                <h3>Lab Test Booking History</h3>
+                <ul id="lab-history-list"></ul>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
